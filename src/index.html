@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Ryan Thomas</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="environments/water.css" />
+    <link rel="stylesheet" href="environments/sunset.css" />
+  </head>
+
+  <body>
+    
+    <div class="Headercontainer">
+      <div class="leftContainer">
+        <div class="logoContainer">
+          <div class="logoImageContainer">
+            <img class="logoImage" src="images/icon1.svg" height="auto" />
+            <div class="logoText">
+              <h2 style="width: 200px">Ryan Thomas</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="headerTextContainer">
+        <div class="headerText">
+          <link>
+            <a class="fa fa-github" style="font-size:24px; text-decoration: none" target="_blank" href="https://github.com/ItsHypers">Github</a>
+          </link>
+          <link>
+          <a class="fa fa-linkedin" style="font-size:24px; text-decoration: none" target="_blank" href="https://www.linkedin.com/in/ryanthomas11/">Linkedin</a>
+          </link>
+          <link>
+          <a class="fa fa-codepen" style="font-size:24px; text-decoration: none" target="_blank" href="https://codepen.io/itshypers">Codepen</a>
+          </link>
+        </div>
+      </div>
+    </div>
+    <div class="box1">
+    </div>
+    <a href="#ocean" onclick="changeEnvironment(`ocean`)" class="vertical-bottom">
+      Dive Deeper
+      </a>
+    <div style="z-index: -1" id="sunset" class="landscape">
+      <div class="mountain"></div>
+      <div class="mountain mountain-2"></div>
+      <div class="mountain mountain-3"></div>
+      <div class="sun-container sun-container-1"></div>
+      <div class="sun-container">
+        <div class="sun paused"></div>
+      </div>
+      <div class="cloud"></div>
+      <div class="cloud cloud-1"></div>
+      <div class="sun-container sun-container-reflection">
+        <div class="sun"></div>
+      </div>
+      <div class="light"></div>
+      <div class="light light-1"></div>
+      <div class="light light-2"></div>
+      <div class="light light-3"></div>
+      <div class="light light-4"></div>
+      <div class="light light-5"></div>
+      <div class="light light-6"></div>
+      <div class="light light-7"></div>
+      <div class="water"></div>
+      <div class="splash"></div>
+      <div class="splash delay-1"></div>
+      <div class="splash delay-2"></div>
+      <div class="splash splash-4 delay-2"></div>
+      <div class="splash splash-4 delay-3"></div>
+      <div class="splash splash-4 delay-4"></div>
+      <div class="splash splash-stone delay-3"></div>
+      <div class="splash splash-stone splash-4"></div>
+      <div class="splash splash-stone splash-5"></div>
+      <div class="lotus lotus-1"></div>
+      <div class="lotus lotus-2"></div>
+      <div class="lotus lotus-3"></div>
+      <div class="front">
+        <div class="stone"></div>
+        <div class="grass"></div>
+        <div class="grass grass-1"></div>
+        <div class="grass grass-2"></div>
+        <div class="reed"></div>
+        <div class="reed reed-1"></div>
+      </div>
+    </div>
+        <div  id="ocean" class="ocean paused">
+          <a onclick="changeEnvironment(`ocean`)" href="#sunset" class="vertical-top">Go Up For Air
+          </a>
+            <div class="bubble bubble--1"></div>
+            <div class="bubble bubble--2"></div>
+            <div class="bubble bubble--3"></div>
+            <div class="bubble bubble--4"></div>
+            <div class="bubble bubble--5"></div>
+            <div class="bubble bubble--6"></div>
+            <div class="bubble bubble--7"></div>
+            <div class="bubble bubble--8"></div>
+            <div class="bubble bubble--9"></div>
+            <div class="bubble bubble--10"></div>
+            <div class="bubble bubble--11"></div>
+            <div class="bubble bubble--12"></div>
+            <div style="z-index: 10;" id="octocat"></div>
+          </div>
+  </body>
+  <script src="main.js"></script>
+</html>
