@@ -1,104 +1,7 @@
-/* Box sizing rules */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-/* Remove default margin */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
-  margin: 0;
-}
-
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role="list"],
-ol[role="list"] {
-  list-style: none;
-}
-
-/* Set core root defaults */
-html:focus-within {
+html {
   scroll-behavior: smooth;
 }
-
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-}
-
-/* A elements that don't have a class get default styles */
-a:not([class]) {
-  text-decoration-skip-ink: auto;
-}
-
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
-  display: block;
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
-
-/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-
-a:visited {
-  color: #e5e7eb;
-}
-a:link {
-  color: #e5e7eb;
-}
-a:hover {
-  color: #b8b9bb;
-}
-a:active {
-  color: #818181;
-}
-
-html {
-  margin: 0;
-  min-height: 100%;
-}
-body {
-  font-family: Arial;
-  background: #f1f1f1;
-}
-.pageLayouts {
-  display: flex;
-  flex-direction: column;
-}
-.Headercontainer {
+.header {
   width: 100%;
   background-color: #1f2937;
   display: flex;
@@ -106,10 +9,19 @@ body {
   justify-content: space-between;
   align-items: center;
   text-decoration: none;
-  position: fixed;
   top: 0;
-  left: 0;
-  z-index: 9;
+}
+#header {
+  background-color: #f1f1f1; /* Grey background */
+  padding: 50px 10px; /* Some padding */
+  color: black;
+  text-align: center; /* Centered text */
+  font-size: 90px; /* Big font size */
+  font-weight: bold;
+  position: fixed; /* Fixed position - sit on top of the page */
+  top: 0;
+  width: 100%; /* Full width */
+  transition: 0.2s; /* Add a transition effect (when scrolling - and font size is decreased) */
 }
 .leftContainer {
   display: flex;
@@ -164,73 +76,117 @@ img {
   max-height: 100%;
   display: block; /* remove extra space below image */
 }
-.box1 {
+.linkedin-button {
+  /* Style the button */
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #0077b5;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 4px #0077b5;
+
+  /* Add animation */
+  transition: all 0.3s ease-out;
+}
+
+.linkedin-button:hover {
+  box-shadow: 0 8px #0077b5;
+  transform: translateY(-4px);
+}
+
+.linkedin-button:active {
+  box-shadow: 0 0 #0077b5;
+  transform: translateY(4px);
+}
+.landingContainer {
   width: 100%;
-  border: black;
-  border-width: 10px;
-  height: 500px;
+  height: 100vh;
   background-color: #1f2937;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-decoration: none;
-  position: relative;
-  z-index: 8;
-  gap: 200px;
-  left: 0;
 }
-.box1left {
+.landing {
+  color: white;
+  font-weight: bold;
+  font-size: 2vh;
+}
+.landing#red {
+  color: rgb(250, 71, 71);
+}
+
+/* Page content */
+.aboutme {
+  padding: 16px;
+  height: 100vh;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .aboutme {
+  padding-top: 102px;
+}
+.footer {
+  position: relative;
+  bottom: 0;
+  width: 100vh;
+  height: 20vh;
+  font-family: "roboto";
+  /* Height of the footer*/
+  background: #1f2937;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 16em;
-  height: fit-content;
-}
-.box1left.bold {
+  gap: 50px;
   color: white;
-  margin-bottom: 0;
-  margin-top: 40px;
-  width: 250px;
-}
-.box1left.text {
-  color: white;
-  margin-top: 0;
-}
-.box1right {
-  display: flex;
-  margin-top: 50px;
   justify-content: center;
   align-items: center;
 }
-.box1Image {
-  width: 500px;
-  height: 400px;
+.links {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
 }
+/* Start with the button styled normally */
 .button {
-  background-color: #3882f6;
-  width: 90px;
-  height: 30px;
-  border: none;
-  color: white;
-  text-align: center;
-  padding: 5px;
-  text-decoration: none;
   display: inline-block;
-  margin-left: -170px;
+  padding: 10px 20px;
+  background-color: #3498db;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
   font-size: 16px;
-  margin-top: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
 }
 
-.button4 {
-  border-radius: 10px;
+/* Add the animation that transforms the arrow */
+.button:hover:after {
+  content: "⬇";
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: rotate(180deg);
 }
-
 .box2 {
   width: 100%;
   border: black;
-  height: 500px;
+  height: 100vh;
   background-color: white;
   display: flex;
   flex-direction: column;
@@ -240,6 +196,7 @@ img {
   position: relative;
   gap: 50px;
   z-index: 7;
+  padding: 16px;
 }
 .box2imagecontainer {
   display: flex;
@@ -247,11 +204,11 @@ img {
   gap: 50px;
   align-items: center;
   justify-content: center;
-  width: 800px;
+  width: 100%;
   height: fit-content;
 }
 .box2image {
-  width: 150px;
+  width: 100%;
   max-width: 150px;
   height: 150px;
   max-height: 150px;
@@ -342,19 +299,4 @@ img {
   border-radius: 10px;
   border-color: #f9faf8;
   margin-right: 50px;
-}
-
-.footer {
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  z-index: 9;
-  text-align: center;
-  color: white;
-  font-size: 14px;
-  letter-spacing: 0.1em;
-  font-family: "roboto";
-  /* Height of the footer*/
-  height: 30px;
-  background: #1f2937;
 }

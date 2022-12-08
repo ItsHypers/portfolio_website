@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="English">
+<html lang="en">
   <head>
     <title>Ryan Thomas</title>
     <meta charset="UTF-8" />
@@ -14,6 +14,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="reset.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
       $(function () {
@@ -27,77 +28,12 @@
   </head>
 
   <body>
-    <div data-include="header"></div>
-    <div class="box1">
-      <div class="box1left">
-        <h1 class="box1left bold">Landing Page Exercise</h1>
-        <p class="box1left text">
-          Lorem ipsum dolor sit amet, eos ad detraxit consectetuer, ea lorem
-          clita impedit eum. Consul suscipit qui ad, no menandri intellegat
-          definitionem duo. Ex est labores officiis verterem, cibo scaevola ad
-          pro. Sint laudem placerat no duo, ius sint debitis persecuti ne, qui
-          ne reque ornatus. Everti evertitur an vis.
-        </p>
-        <button class="box1left button button4">Sign Up!</button>
-      </div>
-      <div class="box1right">
-        <img class="box1Image" src="images/cat5.jpg" />
-      </div>
-    </div>
-
-    <div class="box2">
-      <h1 style="text-align: center">Some Random Information</h1>
-      <div class="box2imagecontainer">
-        <figure>
-          <img src="images/cat1.jpeg" class="box2image" />
-          <figcaption class="box2imageText">
-            This is some subtext under an illustration or image
-          </figcaption>
-        </figure>
-        <figure>
-          <img src="images/cat2.jpeg" class="box2image" />
-          <figcaption class="box2imageText">
-            This is some subtext under an illustration or image, to test how
-            more text would react
-          </figcaption>
-        </figure>
-        <figure>
-          <img src="images/cat3.jpg" class="box2image" />
-          <figcaption class="box2imageText">
-            This is some subtext under an illustration or image, to test how
-            even more text would react, to see if it breaks lol
-          </figcaption>
-        </figure>
-        <figure>
-          <img src="images/cat4.jpeg" class="box2image" />
-          <figcaption class="box2imageText">
-            This is to test short text
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-    <div class="box3">
-      <p class="quote">
-        This is an inspiring quote, or a testimonial from a customer. Maybe it's
-        just filling up space, or maybe people will actually read it. Who knows?
-        All I know is that it looks nice
-      </p>
-      <p class="quoter">-Ghandi</p>
-    </div>
-    <div class="box4">
-      <div class="box4text">
-        <div class="box4text right">
-          <p class="box4header">Call to action! It's time!</p>
-          <p class="box4subtext">
-            Sign up for our product by clicking that button right over there!
-          </p>
-        </div>
-        <button class="box4button">Sign-up</button>
-      </div>
-    </div>
-
-    <div class="footer">Website made by Ryan Thomas</div>
+    <div class="landingContainer" data-include="landing"></div>
+    <div id="myHeader" class="header" data-include="header"></div>
+    <div class="aboutme" id="aboutme" data-include="about"></div>
+    <div class="aboutme" id="portfolio" data-include="portfolio"></div>
+    <div class="aboutme" id="contact" data-include="contact"></div>
+    <div class="footer" id="footer" data-include="footer"></div>
   </body>
-
   <script src="main.js"></script>
 </html>
