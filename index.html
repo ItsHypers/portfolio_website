@@ -14,102 +14,90 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="src/environments/water.css" />
-    <link rel="stylesheet" href="src/environments/sunset.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        var includes = $("[data-include]");
+        $.each(includes, function () {
+          var file = "views/" + $(this).data("include") + ".html";
+          $(this).load(file);
+        });
+      });
+    </script>
   </head>
 
   <body>
-    
-    <div class="Headercontainer">
-      <div class="leftContainer">
-        <div class="logoContainer">
-          <div class="logoImageContainer">
-            <img class="logoImage" src="images/icon1.svg" height="auto" />
-            <div class="logoText">
-              <h2 style="width: 200px">Ryan Thomas</h2>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="headerTextContainer">
-        <div class="headerText">
-          <link>
-            <a class="fa fa-github" style="font-size:24px; text-decoration: none" target="_blank" href="https://github.com/ItsHypers">Github</a>
-          </link>
-          <link>
-          <a class="fa fa-linkedin" style="font-size:24px; text-decoration: none" target="_blank" href="https://www.linkedin.com/in/ryanthomas11/">Linkedin</a>
-          </link>
-          <link>
-          <a class="fa fa-codepen" style="font-size:24px; text-decoration: none" target="_blank" href="https://codepen.io/itshypers">Codepen</a>
-          </link>
-        </div>
-      </div>
-    </div>
+    <div data-include="header"></div>
     <div class="box1">
-    </div>
-    <a href="#ocean" onclick="changeEnvironment(`ocean`)" class="vertical-bottom">
-      Dive Deeper
-      </a>
-    <div style="z-index: -1" id="sunset" class="landscape">
-      <div class="mountain"></div>
-      <div class="mountain mountain-2"></div>
-      <div class="mountain mountain-3"></div>
-      <div class="sun-container sun-container-1"></div>
-      <div class="sun-container">
-        <div class="sun paused"></div>
+      <div class="box1left">
+        <h1 class="box1left bold">Landing Page Exercise</h1>
+        <p class="box1left text">
+          Lorem ipsum dolor sit amet, eos ad detraxit consectetuer, ea lorem
+          clita impedit eum. Consul suscipit qui ad, no menandri intellegat
+          definitionem duo. Ex est labores officiis verterem, cibo scaevola ad
+          pro. Sint laudem placerat no duo, ius sint debitis persecuti ne, qui
+          ne reque ornatus. Everti evertitur an vis.
+        </p>
+        <button class="box1left button button4">Sign Up!</button>
       </div>
-      <div class="cloud"></div>
-      <div class="cloud cloud-1"></div>
-      <div class="sun-container sun-container-reflection">
-        <div class="sun"></div>
-      </div>
-      <div class="light"></div>
-      <div class="light light-1"></div>
-      <div class="light light-2"></div>
-      <div class="light light-3"></div>
-      <div class="light light-4"></div>
-      <div class="light light-5"></div>
-      <div class="light light-6"></div>
-      <div class="light light-7"></div>
-      <div class="water"></div>
-      <div class="splash"></div>
-      <div class="splash delay-1"></div>
-      <div class="splash delay-2"></div>
-      <div class="splash splash-4 delay-2"></div>
-      <div class="splash splash-4 delay-3"></div>
-      <div class="splash splash-4 delay-4"></div>
-      <div class="splash splash-stone delay-3"></div>
-      <div class="splash splash-stone splash-4"></div>
-      <div class="splash splash-stone splash-5"></div>
-      <div class="lotus lotus-1"></div>
-      <div class="lotus lotus-2"></div>
-      <div class="lotus lotus-3"></div>
-      <div class="front">
-        <div class="stone"></div>
-        <div class="grass"></div>
-        <div class="grass grass-1"></div>
-        <div class="grass grass-2"></div>
-        <div class="reed"></div>
-        <div class="reed reed-1"></div>
+      <div class="box1right">
+        <img class="box1Image" src="images/cat5.jpg" />
       </div>
     </div>
-        <div  id="ocean" class="ocean paused">
-          <a onclick="changeEnvironment(`ocean`)" href="#sunset" class="vertical-top" >Go Up For Air
-          </a>
-            <div class="bubble bubble--1"></div>
-            <div class="bubble bubble--2"></div>
-            <div class="bubble bubble--3"></div>
-            <div class="bubble bubble--4"></div>
-            <div class="bubble bubble--5"></div>
-            <div class="bubble bubble--6"></div>
-            <div class="bubble bubble--7"></div>
-            <div class="bubble bubble--8"></div>
-            <div class="bubble bubble--9"></div>
-            <div class="bubble bubble--10"></div>
-            <div class="bubble bubble--11"></div>
-            <div class="bubble bubble--12"></div>
-            <div style="z-index: 10;" id="octocat"></div>
-          </div>
+
+    <div class="box2">
+      <h1 style="text-align: center">Some Random Information</h1>
+      <div class="box2imagecontainer">
+        <figure>
+          <img src="images/cat1.jpeg" class="box2image" />
+          <figcaption class="box2imageText">
+            This is some subtext under an illustration or image
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="images/cat2.jpeg" class="box2image" />
+          <figcaption class="box2imageText">
+            This is some subtext under an illustration or image, to test how
+            more text would react
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="images/cat3.jpg" class="box2image" />
+          <figcaption class="box2imageText">
+            This is some subtext under an illustration or image, to test how
+            even more text would react, to see if it breaks lol
+          </figcaption>
+        </figure>
+        <figure>
+          <img src="images/cat4.jpeg" class="box2image" />
+          <figcaption class="box2imageText">
+            This is to test short text
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+    <div class="box3">
+      <p class="quote">
+        This is an inspiring quote, or a testimonial from a customer. Maybe it's
+        just filling up space, or maybe people will actually read it. Who knows?
+        All I know is that it looks nice
+      </p>
+      <p class="quoter">-Ghandi</p>
+    </div>
+    <div class="box4">
+      <div class="box4text">
+        <div class="box4text right">
+          <p class="box4header">Call to action! It's time!</p>
+          <p class="box4subtext">
+            Sign up for our product by clicking that button right over there!
+          </p>
+        </div>
+        <button class="box4button">Sign-up</button>
+      </div>
+    </div>
+
+    <div class="footer">Website made by Ryan Thomas</div>
   </body>
+
   <script src="main.js"></script>
 </html>
