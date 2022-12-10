@@ -54,6 +54,50 @@ html {
 
   margin: 0 0 0 0.5vw;
 }
+.box1 {
+  width: 100%;
+  border: black;
+  border-width: 10px;
+  height: 500px;
+  background-color: #1f2937;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  position: relative;
+  z-index: 8;
+  gap: 200px;
+  left: 0;
+}
+.box1left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 16em;
+  height: fit-content;
+}
+.box1left.bold {
+  color: white;
+  margin-bottom: 0;
+  margin-top: 40px;
+  width: 250px;
+}
+.box1left.text {
+  color: white;
+  margin-top: 0;
+}
+.box1right {
+  display: flex;
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+}
+.box1Image {
+  width: 500px;
+  height: 400px;
+}
 .headerTextContainer {
   display: flex;
   justify-content: center;
@@ -124,9 +168,9 @@ img {
 }
 
 /* Page content */
-.aboutme {
+.about {
   padding: 16px;
-  height: 100vh;
+  height: 80vh;
 }
 
 /* The sticky class is added to the header with JS when it reaches its scroll position */
@@ -137,7 +181,7 @@ img {
 }
 
 /* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .aboutme {
+.sticky + .about {
   padding-top: 102px;
 }
 .footer {
@@ -299,4 +343,73 @@ img {
   border-radius: 10px;
   border-color: #f9faf8;
   margin-right: 50px;
+}
+nav {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  background: #1b242f;
+  border-bottom: 3px solid #04c2c9;
+  height: 50px;
+  text-align: left;
+  width: 100%;
+  z-index: 99;
+}
+nav.fixed {
+  bottom: inherit;
+  left: 0;
+  position: fixed;
+  top: 0;
+}
+nav.fixed.desk {
+  animation: popDown 0.5s;
+}
+nav .link-wrap {
+  background: #333;
+  height: 0;
+  max-width: 1200px;
+  overflow: hidden;
+  position: absolute;
+  top: 53px;
+  transition: height 0.3s ease-out;
+  width: 100%;
+}
+nav .link-wrap.visible {
+  height: 220px;
+}
+nav .link-wrap div {
+  cursor: pointer;
+  font-size: 12pt;
+  padding: 12px 20px;
+  text-transform: uppercase;
+  transition: color 0.5s;
+}
+nav .link-wrap div:first-child {
+  padding: 25px 20px 12px 20px;
+}
+nav .link-wrap div:hover {
+  color: #e31b6d;
+}
+nav .mdi-menu {
+  font-size: 30pt;
+  line-height: 36pt;
+  margin: auto 0;
+  position: absolute;
+  right: 5vw;
+  top: 0;
+}
+nav .active {
+  color: #e31b6d;
+}
+.flex {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.flex.row {
+  flex-direction: row;
+}
+.flex.wrap {
+  flex-wrap: wrap;
 }

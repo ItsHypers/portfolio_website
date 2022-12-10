@@ -25,15 +25,19 @@
         });
       });
     </script>
+    <script src="main.js"></script>
   </head>
 
   <body>
-    <div class="landingContainer" data-include="landing"></div>
-    <div id="myHeader" class="header" data-include="header"></div>
-    <div class="aboutme" id="aboutme" data-include="about"></div>
-    <div class="aboutme" id="portfolio" data-include="portfolio"></div>
-    <div class="aboutme" id="contact" data-include="contact"></div>
+    <section id="home" class="flex height-fix">
+      <div class="landingContainer" data-include="landing"></div>
+    </section>
+    <section>
+      <nav class="flex" data-include="header"></nav>
+    </section>
+    <div class="about" id="about" data-include="about"></div>
+    <div class="about" id="portfolio" data-include="portfolio"></div>
+    <div class="about" id="contact" data-include="contact"></div>
     <div class="footer" id="footer" data-include="footer"></div>
   </body>
-  <script src="main.js"></script>
 </html>
