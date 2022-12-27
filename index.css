@@ -508,3 +508,6 @@ nav .active {
 .active.slide-in-left {
   animation: slideInLeft 0.75s ease both;
 }
+.canvas {
+  background: #252934;
+}
