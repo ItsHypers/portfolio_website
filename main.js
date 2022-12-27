@@ -49,9 +49,11 @@ $(function () {
     // Link Highlighting
     if (pos2 > $("#home").offset().top) {
       highlightLink("home");
+      $("nav").removeClass("fixed");
     }
     if (pos2 > $("#about").offset().top) {
       highlightLink("about");
+      $("nav").addClass("fixed");
     }
     if (pos2 > $("#portfolio").offset().top) {
       highlightLink("portfolio");
@@ -119,48 +121,6 @@ $(function () {
     $(".float-bar .row").css("left", (pos - origin) * -1);
   }
 
-  // GALLERY
-  $("#gallery").mixItUp({});
-
-  function mixClear() {
-    setTimeout(function () {
-      $("#gallery").removeClass("waypoint");
-    }, 2000);
-  }
-
-  // SCROLL ANIMATIONS
-  function onScrollInit(items, elemTrigger) {
-    var offset = $(window).height() / 1.6;
-    items.each(function () {
-      var elem = $(this),
-        animationClass = elem.attr("data-animation"),
-        animationDelay = elem.attr("data-delay");
-
-      elem.css({
-        "-webkit-animation-delay": animationDelay,
-        "-moz-animation-delay": animationDelay,
-        "animation-delay": animationDelay,
-      });
-
-      var trigger = elemTrigger ? trigger : elem;
-
-      trigger.waypoint(
-        function () {
-          elem.addClass("animated").addClass(animationClass);
-          if (elem.get(0).id === "gallery") mixClear(); //OPTIONAL
-        },
-        {
-          triggerOnce: true,
-          offset: offset,
-        }
-      );
-    });
-  }
-
-  setTimeout(function () {
-    onScrollInit($(".waypoint"));
-  }, 10);
-
   // CONTACT FORM
   $("#contact-form").submit(function (e) {
     e.preventDefault();
@@ -182,3 +142,21 @@ $(function () {
     $("#success").removeClass("expand");
   });
 });
+
+function reveal() {
+  var reveals = document.querySelectorAll(".reveal");
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 150;
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+}
+window.addEventListener("scroll", reveal);
+
+// To check the scroll position on page load
+reveal();
