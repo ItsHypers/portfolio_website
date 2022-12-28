@@ -1,9 +1,9 @@
+.portfoliocontainer {
+  height: 200vh;
+  background-color: lightgray;
+}
 .portfolio {
   background-color: lightgray;
-  width: 100%;
-  height: 120vh;
-  padding-top: 250px;
-  border-top: 42px solid #fff;
 }
 
 #container {
