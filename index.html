@@ -9,20 +9,24 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Montserrat"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
     <link rel="stylesheet" href="./css/portfolio.css" />
     <link rel="stylesheet" href="./css/about.css" />
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/reset.css" />
-
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Parisienne&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap"
+      rel="stylesheet"
+    />
     <!-- HOSTED -->
-    <script src="../cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
-    <script src="../ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="../cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
-    <script src="../cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
       $(function () {
@@ -43,10 +47,52 @@
       <nav class="nav flex" data-include="header"></nav>
     </section>
     <div class="about aboutsection" id="about" data-include="about"></div>
-    <div id="portfolio" data-include="portfolio"></div>
+
+    <!--Projects-->
+    <div class="portfolio reveal" id="portfolio">
+      <h1 style="text-align: center">Projects</h1>
+
+      <div class="filters filter-button-group">
+        <ul>
+          <li class="active">
+            <a href="javascript:void(0);" data-filter="*">All</a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" data-filter="html">HTML/CSS/JS</a>
+          </li>
+          <li><a href="javascript:void(0);" data-filter="unity">Unity</a></li>
+          <li><a href="javascript:void(0);" data-filter="django">Django</a></li>
+        </ul>
+      </div>
+      <div id="container" class="isotope">
+        <div class="grid-item" data-filter="unity">
+          <a
+            class="popupimg"
+            style="text-align: center"
+            href="https://drive.google.com/u/0/uc?id=1WcNDZ4BGtgDsJF7guFJBqdsjOi28sTsk&export"
+            data-link="https://itshypers.itch.io/"
+            data-linktext="Link to my itch!"
+            data-caption="caption"
+          >
+            <img
+              src="https://drive.google.com/u/0/uc?id=1WcNDZ4BGtgDsJF7guFJBqdsjOi28sTsk&export"
+            />
+          </a>
+          <div class="overlay">Unity</div>
+        </div>
+      </div>
+
+      <div
+        class="isotope-pager"
+        style="padding-top: 15px; text-align: center"
+      ></div>
+    </div>
     <div class="about reveal" id="contact" data-include="contact"></div>
     <div class="footer" id="footer" data-include="footer"></div>
   </body>
-  <script src="main.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
   <script src="gallery.js"></script>
+  <script src="main.js"></script>
 </html>

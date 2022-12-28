@@ -1,75 +1,236 @@
-$(".filter a").click(function (e) {
-  e.preventDefault();
-  var a = $(this).attr("href");
-  a = a.substr(1);
-  $(".sets a").each(function () {
-    if (!$(this).hasClass(a) && a != "") $(this).addClass("hide");
-    else $(this).removeClass("hide");
+$(document).ready(function () {
+  var itemSelector = ".grid-item";
+
+  var $container = $("#container").isotope({
+    itemSelector: itemSelector,
+    masonry: {
+      columnWidth: itemSelector,
+      isFitWidth: true,
+    },
   });
 
-  // Add active class to the current button (highlight it)
-  var btnContainer = document.getElementById("btncontainer");
-  var btns = btnContainer.getElementsByClassName("btn");
-  for (var i = 0; i < btns.length; i++) {
-    var current = document.getElementsByClassName("btn-active");
-    current[0].className = current[0].className.replace(" btn-active", "");
-    this.className += " btn-active";
+  //Ascending order
+  var responsiveIsotope = [
+    [480, 7],
+    [720, 10],
+  ];
+
+  var itemsPerPageDefault = 12;
+  var itemsPerPage = defineItemsPerPage();
+  var currentNumberPages = 1;
+  var currentPage = 1;
+  var currentFilter = "*";
+  var filterAtribute = "data-filter";
+  var pageAtribute = "data-page";
+  var pagerClass = "isotope-pager";
+
+  function changeFilter(selector) {
+    $container.isotope({
+      filter: selector,
+    });
   }
-});
 
-let imgs = document.querySelectorAll("img");
-let count;
-imgs.forEach((img, index) => {
-  img.addEventListener("click", function (e) {
-    if (e.target == this) {
-      count = index;
-      let openDiv = document.createElement("div");
-      let imgPreview = document.createElement("img");
-      let butonsSection = document.createElement("div");
-      butonsSection.classList.add("butonsSection");
-      let closeBtn = document.createElement("button");
-      let nextBtn = document.createElement("button");
-      let prevButton = document.createElement("button");
-      prevButton.innerText = "Previous";
-      nextBtn.innerText = "Next";
+  function goToPage(n) {
+    currentPage = n;
 
-      nextBtn.classList.add("nextButton");
-      prevButton.classList.add("prevButton");
-      nextBtn.addEventListener("click", function () {
-        if (count >= imgs.length - 1) {
-          count = 0;
-        } else {
-          count++;
-        }
+    var selector = itemSelector;
+    selector +=
+      currentFilter != "*"
+        ? "[" + filterAtribute + '="' + currentFilter + '"]'
+        : "";
+    selector += "[" + pageAtribute + '="' + currentPage + '"]';
 
-        imgPreview.src = imgs[count].src;
-      });
+    changeFilter(selector);
+  }
 
-      prevButton.addEventListener("click", function () {
-        if (count === 0) {
-          count = imgs.length - 1;
-        } else {
-          count--;
-        }
+  function defineItemsPerPage() {
+    var pages = itemsPerPageDefault;
 
-        imgPreview.src = imgs[count].src;
-      });
-
-      closeBtn.classList.add("closeBtn");
-      closeBtn.innerText = "Close";
-      closeBtn.addEventListener("click", function () {
-        openDiv.remove();
-      });
-
-      imgPreview.classList.add("imgPreview");
-      imgPreview.src = this.src;
-
-      butonsSection.append(prevButton, nextBtn);
-      openDiv.append(imgPreview, butonsSection, closeBtn);
-
-      openDiv.classList.add("openDiv");
-
-      document.querySelector("body").append(openDiv);
+    for (var i = 0; i < responsiveIsotope.length; i++) {
+      if ($(window).width() <= responsiveIsotope[i][0]) {
+        pages = responsiveIsotope[i][1];
+        break;
+      }
     }
+
+    return pages;
+  }
+
+  function setPagination() {
+    var SettingsPagesOnItems = (function () {
+      var itemsLength = $container.children(itemSelector).length;
+
+      var pages = Math.ceil(itemsLength / itemsPerPage);
+      var item = 1;
+      var page = 1;
+      var selector = itemSelector;
+      selector +=
+        currentFilter != "*"
+          ? "[" + filterAtribute + '="' + currentFilter + '"]'
+          : "";
+
+      $container.children(selector).each(function () {
+        if (item > itemsPerPage) {
+          page++;
+          item = 1;
+        }
+        $(this).attr(pageAtribute, page);
+        item++;
+      });
+
+      currentNumberPages = page;
+    })();
+
+    var CreatePagers = (function () {
+      var $isotopePager =
+        $("." + pagerClass).length == 0
+          ? $('<div class="' + pagerClass + '"></div>')
+          : $("." + pagerClass);
+
+      $isotopePager.html("");
+
+      for (var i = 0; i < currentNumberPages; i++) {
+        var $pager = $(
+          '<a href="javascript:void(0);" class="pager" ' +
+            pageAtribute +
+            '="' +
+            (i + 1) +
+            '"></a>'
+        );
+        $pager.html(i + 1);
+
+        $pager.click(function () {
+          var page = $(this).eq(0).attr(pageAtribute);
+          goToPage(page);
+        });
+
+        $pager.appendTo($isotopePager);
+      }
+
+      $container.after($isotopePager);
+    })();
+  }
+
+  setPagination();
+  goToPage(1);
+
+  //Adicionando Event de Click para as categorias
+  $(".filters a").click(function () {
+    var filter = $(this).attr(filterAtribute);
+    currentFilter = filter;
+
+    setPagination();
+    goToPage(1);
+  });
+
+  //Evento Responsivo
+  $(window).resize(function () {
+    itemsPerPage = defineItemsPerPage();
+    setPagination();
   });
 });
+
+$(document).ready(function () {
+  // filter items on button click
+  $(".filter-button-group").on("click", "li", function () {
+    var filterValue = $(this).attr("data-filter");
+    $(".grid").isotope({ filter: filterValue });
+    $(".filter-button-group li").removeClass("active");
+    $(this).addClass("active");
+  });
+});
+
+$(document).ready(function () {
+  // filter items on button click
+  $(".isotope-pager").on("click", "a", function () {
+    var filterValue = $(this).attr("data-page");
+
+    $(".isotope-pager a").removeClass("active");
+    $(this).addClass("active");
+  });
+});
+/*
+$(document).ready(function () {
+  $(".popupimg").magnificPopup({
+    type: "image",
+    gallery: { enabled: true },
+
+    zoom: {
+      enabled: true,
+
+      duration: 300, // duration of the effect, in milliseconds
+      easing: "ease-in-out", // CSS transition easing function
+
+      opener: function (openerElement) {
+        return openerElement.is("img")
+          ? openerElement
+          : openerElement.find("img");
+      },
+    },
+  });
+});*/
+$(".isotope a").click(function (e) {
+  console.log($(this));
+  var file = $(this).attr("href");
+  $.magnificPopup.open({
+    alignCenter: true,
+    gallery: { enabled: true },
+    items: {
+      src: $(
+        '<img style="text-align: center;" src="' +
+          file +
+          '"/><a class="download" href="' +
+          file +
+          '">Link to my Itch!</a>'
+      ),
+      type: "inline",
+    },
+    zoom: {
+      enabled: true,
+
+      duration: 300, // duration of the effect, in milliseconds
+      easing: "ease-in-out", // CSS transition easing function
+
+      opener: function (openerElement) {
+        return openerElement.is("img")
+          ? openerElement
+          : openerElement.find("img");
+      },
+    },
+    closeBtnInside: false,
+  });
+  e.preventDefault();
+});
+/*
+$(".isotope a").click(function (e) {
+  console.log(
+    $(this).dataset.link + $(this).dataset.linkeText + $(this).dataset.caption
+  );
+  var file = $(this).attr("href");
+  var link = $(this).attr("link");
+  var linkText = $(this).attr("link_text");
+  var caption = $(this).attr("caption");
+  $.magnificPopup.open({
+    alignCenter: true,
+    gallery: { enabled: true },
+    items: {
+      src: $('<img style="text-align: center;" src="' + file + '"/>'),
+      type: "inline",
+    },
+    zoom: {
+      enabled: true,
+
+      duration: 300, // duration of the effect, in milliseconds
+      easing: "ease-in-out", // CSS transition easing function
+
+      opener: function (openerElement) {
+        return openerElement.is("img")
+          ? openerElement
+          : openerElement.find("img");
+      },
+    },
+    closeBtnInside: false,
+  });
+  e.preventDefault();
+});
+*/
