@@ -170,18 +170,24 @@ $(document).ready(function () {
   });
 });*/
 $(".isotope a").click(function (e) {
-  console.log($(this));
   var file = $(this).attr("href");
+  var link = $(this).data("link");
+  var linktext = $(this).data("linktext");
+  var caption = $(this).data("caption");
   $.magnificPopup.open({
     alignCenter: true,
     gallery: { enabled: true },
     items: {
       src: $(
-        '<img style="text-align: center;" src="' +
+        '<div class="popup"><img style="text-align: center;" src="' +
           file +
-          '"/><a class="download" href="' +
-          file +
-          '">Link to my Itch!</a>'
+          '"/> <p class="popupcaption">' +
+          caption +
+          '</p> <a class="download" href="' +
+          link +
+          '">' +
+          linktext +
+          "</a></div>"
       ),
       type: "inline",
     },
