@@ -14,8 +14,6 @@ $(document).ready(function () {
     [480, 7],
     [720, 10],
   ];
-
-  var itemsPerPageDefault = 12;
   var itemsPerPage = defineItemsPerPage();
   var currentNumberPages = 1;
   var currentPage = 1;
@@ -44,6 +42,14 @@ $(document).ready(function () {
   }
 
   function defineItemsPerPage() {
+    console.log(window.screen.width + " x " + window.screen.height);
+    if (window.screen.width >= 300 && window.screen.height >= 600) {
+      console.log(2);
+      var itemsPerPageDefault = 2;
+    }
+    if (window.screen.width >= 1024 && window.screen.height >= 768) {
+      var itemsPerPageDefault = 12;
+    }
     var pages = itemsPerPageDefault;
 
     for (var i = 0; i < responsiveIsotope.length; i++) {
@@ -195,36 +201,3 @@ $(".isotope a").click(function (e) {
   });
   e.preventDefault();
 });
-/*
-$(".isotope a").click(function (e) {
-  console.log(
-    $(this).dataset.link + $(this).dataset.linkeText + $(this).dataset.caption
-  );
-  var file = $(this).attr("href");
-  var link = $(this).attr("link");
-  var linkText = $(this).attr("link_text");
-  var caption = $(this).attr("caption");
-  $.magnificPopup.open({
-    alignCenter: true,
-    gallery: { enabled: true },
-    items: {
-      src: $('<img style="text-align: center;" src="' + file + '"/>'),
-      type: "inline",
-    },
-    zoom: {
-      enabled: true,
-
-      duration: 300, // duration of the effect, in milliseconds
-      easing: "ease-in-out", // CSS transition easing function
-
-      opener: function (openerElement) {
-        return openerElement.is("img")
-          ? openerElement
-          : openerElement.find("img");
-      },
-    },
-    closeBtnInside: false,
-  });
-  e.preventDefault();
-});
-*/
