@@ -183,25 +183,13 @@ $(".isotope a").click(function (e) {
           file +
           '"/> <p class="popupcaption">' +
           caption +
-          '</p> <a class="download" href="' +
+          '</p> <a target="_blank" class="download" href="' +
           link +
           '">' +
           linktext +
           "</a></div>"
       ),
       type: "inline",
-    },
-    zoom: {
-      enabled: true,
-
-      duration: 300, // duration of the effect, in milliseconds
-      easing: "ease-in-out", // CSS transition easing function
-
-      opener: function (openerElement) {
-        return openerElement.is("img")
-          ? openerElement
-          : openerElement.find("img");
-      },
     },
     closeBtnInside: false,
   });
