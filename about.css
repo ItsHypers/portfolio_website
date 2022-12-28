@@ -10,7 +10,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 100px;
 }
 
 .aboutsection1 {
@@ -18,4 +17,100 @@
 }
 .aboutsection2 {
   text-align: center;
+}
+.octo-image {
+  display: block;
+  width: 400px;
+  height: 400px;
+  background-position: center center;
+  background-size: cover;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.octo {
+  transform: rotate(45deg);
+}
+
+.octo1 {
+  transform: rotate(-45deg);
+}
+
+.octo,
+.octo div {
+  margin: 0 auto;
+  transform-origin: 50% 50%;
+  overflow: hidden;
+  width: 400px;
+  height: 400px;
+}
+
+.ryanthomas {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+.skills {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  width: 600px;
+}
+.skill-group {
+  margin: 0 auto;
+  width: 100%;
+}
+.skill-group > p {
+  color: black;
+}
+.skill-bar {
+  width: 100%;
+  height: 50px;
+  background-color: #757575;
+}
+.skill-value {
+  text-align: right;
+  padding: 10px;
+  color: black;
+}
+.github {
+  width: 90%;
+  background-color: #4b99ff;
+}
+.unity {
+  width: 85%;
+  background-color: #4b99ff;
+}
+.html {
+  width: 70%;
+  background-color: #4b99ff;
+}
+.js {
+  width: 70%;
+  background-color: #4b99ff;
+}
+.python {
+  width: 55%;
+  background-color: #4b99ff;
+}
+.vba {
+  width: 70%;
+  background-color: #4b99ff;
+}
+.office {
+  width: 70%;
+  background-color: #4b99ff;
+}
+.acrobat {
+  width: 60%;
+  background-color: #4b99ff;
+}
+@media screen and (min-width: 1900px) {
+}
+@media screen and (min-width: 2500px) {
+  .aboutsection {
+    gap: 100px;
+  }
 }

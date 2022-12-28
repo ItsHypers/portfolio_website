@@ -105,22 +105,6 @@ $(function () {
     $(".link-wrap").toggleClass("visible");
   });
 
-  posFilterBar($(".filter").first());
-
-  $(".filter").click(function () {
-    posFilterBar(this);
-  });
-
-  function posFilterBar(elem) {
-    var origin = $(elem).parent().offset().left;
-    var pos = $(elem).offset().left;
-    $(".float-bar").css({
-      left: pos - origin,
-      width: $(elem).innerWidth(),
-    });
-    $(".float-bar .row").css("left", (pos - origin) * -1);
-  }
-
   // CONTACT FORM
   $("#contact-form").submit(function (e) {
     e.preventDefault();
