@@ -2,12 +2,13 @@
   background-color: lightgray;
   width: 100%;
   height: 120vh;
+  padding-top: 250px;
+  border-top: 42px solid #fff;
 }
 
 #container {
   margin: auto;
 }
-
 .header h1 {
   text-align: center;
   background: -webkit-linear-gradient(#e3ca66, #b48e47);

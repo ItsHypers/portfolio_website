@@ -301,8 +301,8 @@ h1 {
 .imageText {
   width: 300px;
   text-align: center;
-  font-size: 20px;
-  height: 200px;
+  font-size: 15px;
+  height: 100px;
 }
 .box3 {
   width: 100%;
@@ -545,4 +545,12 @@ nav .active {
 }
 .active.slide-in-left {
   animation: slideInLeft 0.75s ease both;
+}
+@media only screen and (min-width: 1900px) {
+  .aboutsection {
+    padding-top: 150px;
+  }
+  .portfolio {
+    padding-top: 200px;
+  }
 }

@@ -14,7 +14,7 @@ $(document).ready(function () {
     [480, 7],
     [720, 10],
   ];
-  var itemsPerPageDefault = 2;
+  var itemsPerPageDefault = 12;
   var itemsPerPage = defineItemsPerPage();
   var currentNumberPages = 1;
   var currentPage = 1;
