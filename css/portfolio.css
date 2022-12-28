@@ -1,0 +1,171 @@
+.flex {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.flex.row {
+  flex-direction: row;
+}
+.flex.wrap {
+  flex-wrap: wrap;
+}
+section:nth-of-type(3) .filter-wrap {
+  position: relative;
+  white-space: nowrap;
+}
+section:nth-of-type(3) #gallery {
+  margin: 20px 0;
+}
+section:nth-of-type(3) #gallery .text,
+section:nth-of-type(3) #gallery .button {
+  color: #1b242f;
+  opacity: 0;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+}
+section:nth-of-type(3) #gallery .text .bold,
+section:nth-of-type(3) #gallery .button .bold {
+  font-size: 16pt;
+}
+section:nth-of-type(3) #gallery .button {
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  border: 2px solid #e31b6d;
+  font-size: 13pt;
+  margin: 0 auto;
+  padding: 7px 0;
+  width: 170px;
+}
+section:nth-of-type(3) #gallery .mix {
+  display: none;
+  position: relative;
+}
+section:nth-of-type(3) #gallery .mix .waypoint {
+  background: #fff;
+}
+section:nth-of-type(3) #gallery .mix .button:hover {
+  background: #e31b6d;
+  color: #fff;
+}
+section:nth-of-type(3) #gallery .mix:nth-child(1) .card {
+  background: url("../img/thumb-1.jpg") center center/cover;
+}
+section:nth-of-type(3) #gallery .mix:nth-child(2) .card {
+  background: url("../img/thumb-2.jpg") center center/cover;
+}
+section:nth-of-type(3) #gallery .mix:nth-child(3) .card {
+  background: url("../img/thumb-3.jpg") center center/cover;
+}
+section:nth-of-type(3) #gallery .mix:nth-child(4) .card {
+  background: url("../img/thumb-4.jpg") center center/cover;
+}
+section:nth-of-type(3) #gallery .mix:nth-child(5) .card {
+  background: url("../img/thumb-5.jpg") center center/cover;
+}
+section:nth-of-type(3) #gallery .mix:nth-child(6) .card {
+  background: url("../img/thumb-6.jpg") center center/cover;
+}
+section:nth-of-type(3) #gallery .mix:nth-child(7) .card {
+  background: url("../img/thumb-7.jpg") center center/cover;
+}
+section:nth-of-type(3) #gallery .mix:nth-child(8) .card {
+  background: url("../img/thumb-8.jpg") center center/cover;
+}
+section:nth-of-type(3) #gallery .mix:nth-child(9) .card {
+  background: url("../img/thumb-9.jpg") center center/cover;
+}
+section:nth-of-type(3) #gallery .mix:nth-child(10) .card {
+  background: url("../img/thumb-10.html") center center/cover;
+}
+section:nth-of-type(3) #gallery .mix:nth-child(11) .card {
+  background: url("../img/thumb-11.html") center center/cover;
+}
+section:nth-of-type(3) #gallery .mix:nth-child(12) .card {
+  background: url("../img/thumb-12.html") center center/cover;
+}
+section:nth-of-type(3) #gallery .mix .card {
+  height: 240px;
+  max-width: 100%;
+  transition: opacity 0.5s;
+  width: calc(50vw - 8px);
+}
+section:nth-of-type(3) #gallery .mix:hover .card {
+  opacity: 0;
+}
+section:nth-of-type(3) #gallery .mix:hover .text {
+  cursor: default;
+  opacity: 1;
+  top: 24%;
+}
+section:nth-of-type(3) #gallery .mix:hover .button {
+  bottom: 24%;
+  opacity: 1;
+}
+
+@media screen and (max-width: 400px) {
+  section:nth-of-type(3) #gallery .mix .card {
+    width: 100vw;
+  }
+}
+@media screen and (min-width: 600px) {
+  section:nth-of-type(3) #gallery .mix .card {
+    height: 300px;
+  }
+}
+@media screen and (min-width: 960px) {
+  .animated.waypoint#gallery {
+    opacity: 1;
+  }
+  .animated.waypoint#gallery .mix:nth-child(1) > div {
+    animation: slideUp 0.75s 0.1s ease both;
+    opacity: 0;
+  }
+  .animated.waypoint#gallery .mix:nth-child(2) > div {
+    animation: slideUp 0.75s 0.2s ease both;
+    opacity: 0;
+  }
+  .animated.waypoint#gallery .mix:nth-child(3) > div {
+    animation: slideUp 0.75s 0.3s ease both;
+    opacity: 0;
+  }
+  .animated.waypoint#gallery .mix:nth-child(4) > div {
+    animation: slideUp 0.75s 0.4s ease both;
+    opacity: 0;
+  }
+  .animated.waypoint#gallery .mix:nth-child(5) > div {
+    animation: slideUp 0.75s 0.5s ease both;
+    opacity: 0;
+  }
+  .animated.waypoint#gallery .mix:nth-child(6) > div {
+    animation: slideUp 0.75s 0.6s ease both;
+    opacity: 0;
+  }
+  .animated.waypoint#gallery .mix:nth-child(7) > div {
+    animation: slideUp 0.75s 0.7s ease both;
+    opacity: 0;
+  }
+  .animated.waypoint#gallery .mix:nth-child(8) > div {
+    animation: slideUp 0.75s 0.8s ease both;
+    opacity: 0;
+  }
+  .animated.waypoint#gallery .mix:nth-child(9) > div {
+    animation: slideUp 0.75s 0.9s ease both;
+    opacity: 0;
+  }
+
+  section:nth-of-type(3) #gallery .mix .card {
+    width: 390px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  section:nth-of-type(4) .blog-wrap {
+    margin: 0 0 50px 20px;
+    width: 270px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

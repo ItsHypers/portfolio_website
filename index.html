@@ -13,9 +13,16 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="./css/portfolio.css" />
+    <link rel="stylesheet" href="./css/about.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/reset.css" />
+
+    <!-- HOSTED -->
+    <script src="../cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+    <script src="../ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="../cdnjs.cloudflare.com/ajax/libs/mixitup/2.1.11/jquery.mixitup.min.js"></script>
+    <script src="../cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
       $(function () {
@@ -36,9 +43,10 @@
       <nav class="nav flex" data-include="header"></nav>
     </section>
     <div class="about aboutsection" id="about" data-include="about"></div>
-    <div class="about reveal" id="portfolio" data-include="portfolio"></div>
+    <div id="portfolio" data-include="portfolio"></div>
     <div class="about reveal" id="contact" data-include="contact"></div>
     <div class="footer" id="footer" data-include="footer"></div>
   </body>
   <script src="main.js"></script>
+  <script src="gallery.js"></script>
 </html>
