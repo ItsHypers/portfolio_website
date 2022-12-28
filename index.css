@@ -519,39 +519,3 @@ nav .active {
 .active.slide-in-left {
   animation: slideInLeft 0.75s ease both;
 }
-.canvas {
-  background: #252934;
-}
-.octo-image {
-  display: block;
-  width: 500px;
-  height: 500px;
-  background-position: center center;
-  background-size: cover;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-.octo {
-  transform: rotate(45deg);
-}
-
-.octo1 {
-  transform: rotate(-45deg);
-}
-
-.octo,
-.octo div {
-  margin: 0 auto;
-  transform-origin: 50% 50%;
-  overflow: hidden;
-  width: 500px;
-  height: 500px;
-}
-
-.ryanthomas {
-  display: flex;
-  flex-direction: row;
-}
