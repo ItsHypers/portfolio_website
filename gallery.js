@@ -14,6 +14,7 @@ $(document).ready(function () {
     [480, 7],
     [720, 10],
   ];
+  var itemsPerPageDefault = 2;
   var itemsPerPage = defineItemsPerPage();
   var currentNumberPages = 1;
   var currentPage = 1;
@@ -43,13 +44,6 @@ $(document).ready(function () {
 
   function defineItemsPerPage() {
     console.log(window.screen.width + " x " + window.screen.height);
-    if (window.screen.width >= 300 && window.screen.height >= 600) {
-      console.log(2);
-      var itemsPerPageDefault = 2;
-    }
-    if (window.screen.width >= 1024 && window.screen.height >= 768) {
-      var itemsPerPageDefault = 12;
-    }
     var pages = itemsPerPageDefault;
 
     for (var i = 0; i < responsiveIsotope.length; i++) {
