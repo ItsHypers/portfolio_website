@@ -555,8 +555,8 @@ nav .active {
     padding-top: 200px;
   }
 }
-/*
-@media screen and (max-width: 400px) {
+
+@media only screen and (max-width: 800px) and (min-width: 400px) {
   .box2imagecontainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -616,10 +616,10 @@ nav .active {
     width: 60%;
   }
   .about {
-    height: 180vh;
+    height: 200vh;
   }
 }
-@media screen and (max-width: 1280px) {
+@media only screen and (max-width: 1400px) and (min-width: 1000px) {
   .box2imagecontainer {
     display: flex;
     flex-direction: row;
