@@ -71,6 +71,15 @@ html {
   gap: 200px;
   left: 0;
 }
+.box2imagecontainer {
+  display: flex;
+  flex-direction: row;
+  gap: 150px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: fit-content;
+}
 .box1left {
   display: flex;
   flex-direction: column;
@@ -270,15 +279,6 @@ h1 {
   gap: 50px;
   z-index: 7;
   padding: 16px;
-}
-.box2imagecontainer {
-  display: flex;
-  flex-direction: row;
-  gap: 150px;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: fit-content;
 }
 .box2image {
   width: 100%;
@@ -547,11 +547,130 @@ nav .active {
 .active.slide-in-left {
   animation: slideInLeft 0.75s ease both;
 }
-@media only screen and (min-width: 1900px) {
+@media screen and (max-width: 1900px) {
   .aboutsection {
     padding-top: 150px;
   }
   .portfolio {
     padding-top: 200px;
+  }
+}
+/*
+@media screen and (max-width: 400px) {
+  .box2imagecontainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+  .aboutsection {
+    width: 100%;
+    height: 100vh;
+    display: block;
+  }
+  .aboutsection1 {
+    text-align: center;
+  }
+  .aboutsection2 {
+    text-align: center;
+  }
+  .header-bar {
+    width: auto;
+  }
+  .imageText {
+    width: 80%;
+    font-size: 15px;
+  }
+  .octo-image {
+    display: block;
+    width: 300px;
+    height: 300px;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .octo {
+    transform: rotate(45deg);
+  }
+
+  .octo1 {
+    transform: rotate(-45deg);
+  }
+
+  .octo,
+  .octo div {
+    margin: 0 auto;
+    transform-origin: 50% 50%;
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+  }
+  .ryanthomas {
+    display: block;
+  }
+  .skill-group {
+    margin: 0;
+    width: 60%;
+  }
+  .about {
+    height: 180vh;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .box2imagecontainer {
+    display: flex;
+    flex-direction: row;
+    gap: 150px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .aboutsection {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .aboutsection1 {
+    text-align: center;
+  }
+  .aboutsection2 {
+    text-align: center;
+  }
+
+  .octo-image {
+    display: block;
+    width: 400px;
+    height: 400px;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .octo {
+    transform: rotate(45deg);
+  }
+
+  .octo1 {
+    transform: rotate(-45deg);
+  }
+
+  .octo,
+  .octo div {
+    margin: 0 auto;
+    transform-origin: 50% 50%;
+    overflow: hidden;
+    width: 400px;
+    height: 400px;
   }
 }

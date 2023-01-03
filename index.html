@@ -60,7 +60,7 @@
     <section>
       <nav class="nav flex" data-include="header"></nav>
     </section>
-    <section class="about aboutsection scrollSection" id="about">
+    <div class="about aboutsection scrollSection" id="about">
       <div class="aboutsection1 reveal slide-in-left">
         <h1 style="text-align: center; color: black">About me</h1>
         <div class="header-bar"></div>
@@ -150,10 +150,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!--Projects-->
-    <section class="scrollSection portfoliocontainer">
+    <div class="scrollSection portfoliocontainer">
       <div class="portfolio reveal" id="portfolio">
         <h1 style="text-align: center">Projects</h1>
 
@@ -224,6 +223,19 @@
             </a>
             <div class="overlay">Itch.IO (Unity)</div>
           </div>
+          <div class="grid-item" data-filter="unity">
+            <a
+              class="popupimg"
+              style="text-align: center"
+              href="./images/itch-io.png"
+              data-link="https://itshypers.itch.io"
+              data-linktext="Link to Itch Page!"
+              data-caption="I have a few public game-development projects on my Itch page; these were used to learn Unity, C# and coding basics, most of which were done as solo projects in my free time."
+            >
+              <img src="./images/itch-io.png" />
+            </a>
+            <div class="overlay">Itch.IO (Unity)</div>
+          </div>
         </div>
 
         <div
@@ -231,14 +243,13 @@
           style="padding-top: 15px; text-align: center"
         ></div>
       </div>
-    </section>
+    </div>
     <section class="scrollSection contact">
       <div class="contactform reveal" id="contact">
         <div class="container" id="body">
           <h1 class="brand"><span>Contact Me!</span></h1>
 
           <div class="wrapper">
-            <!-- COMPANY INFORMATION -->
             <div class="company-info">
               <h3>Ryan Thomas</h3>
 
@@ -266,9 +277,6 @@
                 </li>
               </ul>
             </div>
-            <!-- End .company-info -->
-
-            <!-- CONTACT FORM -->
             <div class="contact">
               <h3>E-mail Us</h3>
 
@@ -307,13 +315,9 @@
                   <button type="submit">Submit</button>
                 </p>
               </form>
-              <!-- End #contact-form -->
             </div>
-            <!-- End .contact -->
           </div>
-          <!-- End .wrapper -->
         </div>
-        <!-- End .container -->
       </div>
     </section>
     <footer>
