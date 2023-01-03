@@ -556,7 +556,7 @@ nav .active {
   }
 }
 
-@media only screen and (max-width: 800px) and (min-width: 400px) {
+@media only screen and (max-width: 900px) and (min-width: 400px) {
   .box2imagecontainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
