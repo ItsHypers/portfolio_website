@@ -547,16 +547,8 @@ nav .active {
 .active.slide-in-left {
   animation: slideInLeft 0.75s ease both;
 }
-@media screen and (max-width: 1900px) {
-  .aboutsection {
-    padding-top: 150px;
-  }
-  .portfolio {
-    padding-top: 200px;
-  }
-}
 
-@media only screen and (max-width: 900px) and (min-width: 400px) {
+@media only screen and (min-width: 400px) and (max-width: 999px) {
   .box2imagecontainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -616,7 +608,7 @@ nav .active {
     width: 60%;
   }
   .about {
-    height: 200vh;
+    height: 220vh;
   }
 }
 @media only screen and (max-width: 1400px) and (min-width: 1000px) {
@@ -672,5 +664,13 @@ nav .active {
     overflow: hidden;
     width: 400px;
     height: 400px;
+  }
+}
+@media screen and (max-width: 1900px) {
+  .aboutsection {
+    padding-top: 150px;
+  }
+  .portfolio {
+    padding-top: 200px;
   }
 }
